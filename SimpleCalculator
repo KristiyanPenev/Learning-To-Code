@@ -1,0 +1,62 @@
+package com.company;
+
+
+  /** Main Method */
+public class SimpleCalculator {
+
+
+    double firstNumber;
+    double secondNumber;
+
+
+    public double getFirstNumber() {
+        return firstNumber;
+      }
+
+      public double getSecondNumber() {
+        return secondNumber;
+      }
+
+      public void setFirstNumber(double newValue) {
+        firstNumber = newValue;
+
+      }
+      public void setSecondNumber(double newValue) {
+        secondNumber = newValue;
+      }
+      public double getAdditionalResult() {
+        return firstNumber + secondNumber;
+      }
+      public double getSubtractionResult() {
+        return firstNumber - secondNumber;
+      }
+      public double getMultiplicationResult() {
+        return firstNumber * secondNumber;
+      }
+      public double getDivisionResult() {
+        return secondNumber / firstNumber;
+      }
+
+}
+
+Lector, I made a second class to bring the result. Could you tell me please whether is okay that I make a second class.
+
+package com.company;
+
+public class SumCalculator {
+
+    public static void main(String[] args) {
+
+        SimpleCalculator calculator = new SimpleCalculator();
+        calculator.setFirstNumber(5.0);
+        calculator.setSecondNumber(4);
+
+
+        System.out.println("add = " + calculator.getAdditionalResult());
+        System.out.println("subtract = " + calculator.getSubtractionResult());
+        calculator.setFirstNumber(5.25);
+        calculator.setSecondNumber(0.0);
+        System.out.println("multiply = " + calculator.getMultiplicationResult());
+        System.out.println("divide = " + calculator.getDivisionResult());
+    }
+}
