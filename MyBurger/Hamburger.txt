@@ -1,0 +1,57 @@
+package com.company;
+
+public class Hamburger {
+
+    private String name;
+    private String breadRollType;
+    private String meat;
+    public double basePrice;
+    private double tomato;
+    private double lettuce;
+    private double carrot;
+
+    public Hamburger(String name, String breadRollType) {
+        this.name = name;
+        this.breadRollType = breadRollType;
+        this.meat = "Chicken meat";
+        this.basePrice = 2.50;
+    }
+
+    public double getBasePrice() {
+        return basePrice;
+    }
+
+
+    public String getMeat() {
+        return this.meat;
+    }
+
+    public double getTomato() {
+        return this.tomato;
+    }
+
+    public void setTomato(double price) {
+       this.tomato = price;
+    }
+
+    public double getLettuce() {
+        return this.lettuce;
+    }
+
+    public void setLettuce(double price) {
+        this.lettuce = price;
+    }
+
+    public double getCarrot() {
+        return this.carrot;
+    }
+
+    public void setCarrot(double price) {
+        this.carrot = price;
+    }
+
+    public double finalPrice() {
+        return basePrice + getLettuce() + getTomato() + getCarrot();
+    }
+
+}

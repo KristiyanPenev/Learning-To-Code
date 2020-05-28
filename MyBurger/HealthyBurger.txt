@@ -1,0 +1,77 @@
+package com.company;
+
+public class HealthyBurger{
+
+    private String breadRollType;
+    private double tomato;
+    private double carrot;
+    private double lettuce;
+    private double basePrice;
+    private double onion;
+    private double mushrooms;
+    private double cucumber;
+
+    public HealthyBurger(String breadRollType) {
+        this.breadRollType = breadRollType;
+        this.basePrice = 3.0;
+
+    }
+
+    public double getBasePrice() {
+        return basePrice;
+    }
+
+    public double getTomato() {
+        return this.tomato;
+    }
+
+    public void setTomato(double price) {
+        this.tomato = price;
+    }
+
+    public double getCarrot() {
+        return this.carrot;
+    }
+
+    public void setCarrot(double price) {
+        this.carrot = price;
+    }
+
+    public double getLettuce() {
+        return this.lettuce;
+    }
+
+    public void setLettuce(double price) {
+        this.lettuce = price;
+    }
+
+    public double getOnion() {
+        return this.onion;
+    }
+
+    public void setOnion(double price) {
+        this.onion = price;
+    }
+
+    public double getMushrooms() {
+        return mushrooms;
+    }
+
+    public void setMushrooms(int price) {
+        this.mushrooms = price;
+    }
+
+    public double getCucumber() {
+        return cucumber;
+    }
+
+    public void setCucumber(double price){
+        this.cucumber = price;
+    }
+
+    public double finalPrice() {
+        return basePrice + getCarrot() + getLettuce() + getTomato() + getCucumber() + getMushrooms() + getOnion();
+    }
+
+
+}
