@@ -1,0 +1,84 @@
+package com.company;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class MobilePhone {
+
+    private static Scanner input = new Scanner(System.in);
+    private static Contacts contacts = new Contacts();
+
+    public static void main(String[] args) {
+
+        boolean quitContact = false;
+        int choice = 0;
+        printInstructions();
+        while(!quitContact) {
+            System.out.println("Enter your choice: ");
+            choice = input.nextInt();
+            input.nextLine();
+
+            /** Use switch statement for options: quit,print list of contacts
+             * add new contact, update existing contact, remove contact
+             * and search/find contact.
+             */
+
+            switch (choice) {
+                case 0:
+                    printInstructions();
+                    break;
+                case 1:
+                    contacts.printContactList();
+                    break;
+                case 2:
+                    addContact();
+                    break;
+                case 3:
+                    removeContact();
+                    break;
+                case 4:
+                    searchContact();
+                    break;
+                case 5:
+                    quitContact = true;
+                    break;
+
+            }
+        }
+    }
+
+    public static void printInstructions() {
+        System.out.println("\n Press:");
+        System.out.println("\t 0 - To print choice options. ");
+        System.out.println("\t 1- To print the contact list. ");
+        System.out.println("\t 2 - To add a contact in the list. ");
+        System.out.println("\t 3 - To remove a contact from the list. ");
+        System.out.println("\t 4 - To search a contact in the list. ");
+        System.out.println("\t 5 - To quit. ");
+
+    }
+
+    public static void addContact() {
+        System.out.println("Please enter the contact name: ");
+        String name = input.nextLine();
+        System.out.println("Please enter phone number: ");
+        String phoneNumber = input.nextLine();
+        System.out.println("Contact added: name = " + name + ", and phone number = " + phoneNumber);
+    }
+
+
+    public static void removeContact() {
+        System.out.println("Please enter the contact you want to remove: ");
+       int contactNumberInList = input.nextInt();
+       input.nextLine();
+       contacts.removeContact(-1);
+    }
+
+    public static void searchContact() {
+        System.out.println("Search for existing contact: ");
+        String searchName = input.nextLine();
+        if(contacts.findContact(searchName)!=null) {
+            System.out.println("Found " + searchName + " in our contact list.");
+        }
+    }
+}
